@@ -9,10 +9,32 @@
     <Window.Resources>
         <Storyboard x:Key="AddConverterRollDown">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="AddUnitGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="609.04"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="134.04"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="299.04"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="609.04"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="AddUnitGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
-                <EasingDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RollUpButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="104.04"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="9.04"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RollUpButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="5"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="AddConverterRollUp">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="AddUnitGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="619.04"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0.076"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="AddUnitGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -22,11 +44,83 @@
         <EventTrigger RoutedEvent="Button.Click" SourceName="RollDownButton">
             <BeginStoryboard Storyboard="{StaticResource AddConverterRollDown}"/>
         </EventTrigger>
+        <EventTrigger RoutedEvent="Button.Click" SourceName="RollUpButton">
+            <BeginStoryboard Storyboard="{StaticResource AddConverterRollUp}"/>
+        </EventTrigger>
     </Window.Triggers>
 
 
     <Grid Width="1000" Height="600">
         <Grid x:Name="MainGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+
+
+            <StackPanel Grid.RowSpan="2" Margin="30">
+                <TextBlock Text="UNIT CONVERTER." 
+                           Foreground="#2CEEF0"
+                           FontSize="30"
+                           Margin="0 0 0 5"/>
+                <TextBlock Text="Select units to convert" 
+                           Foreground="#FF17A9AA"
+                           FontSize="16"
+                           Margin="0 0 0 70"/>
+
+                <TextBlock Text="Convert From:" Foreground="#2CEEF0"/>
+                <ComboBox HorizontalAlignment="Left" Height="50" Width="350" Margin="0 0 0 30"/>
+
+                <TextBlock Text="Convert To:" Foreground="#2CEEF0"/>
+                <ComboBox HorizontalAlignment="Left" Height="50" Width="350"/>
+
+                <Button Content="Test Button"
+                        Width="350"
+                        HorizontalAlignment="Left"
+                        Margin="0 20 0 0"
+                        Height="50">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button 
+                    Content="➕"
+                    Height="60"
+                    Width="60"
+                    Margin="0 0 20 20"
+                    x:Name="RollUpButton" Canvas.Left="420" Canvas.Top="20"
+                    BorderThickness="0"
+                    Foreground="#B4F5F0"
+                    FontSize="18"
+                    Background="Black" RenderTransformOrigin="0.5,0.5">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="100"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </StackPanel>
 
         </Grid>
 
@@ -63,10 +157,20 @@
 
             <Canvas Grid.Row="0" Grid.Column="1">
                 <Button 
-                    Content="Move"
-                    Height="30"
+                    Content="⮟"
+                    Height="60"
                     Width="60"
-                    x:Name="RollDownButton" Canvas.Left="430" Canvas.Top="10"/>
+                    x:Name="RollDownButton" Canvas.Left="420" Canvas.Top="20"
+                    BorderThickness="0"
+                    Foreground="#B4F5F0"
+                    FontSize="18"
+                    Background="#041F60">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="100"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Canvas>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20 0 0 10" HorizontalAlignment="Left">
@@ -85,7 +189,7 @@
                 <Separator Width="960" Background="#FFC7C7C7"/>
             </StackPanel>
 
-            
+
             <StackPanel Grid.Row="2" Grid.Column="0" Margin="20" HorizontalAlignment="Left">
                 <TextBlock Text="Base converter unit:"/>
                 <TextBox Style="{StaticResource DefaultTextBox}" Margin="0 0 0 30">

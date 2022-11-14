@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Uczen\\.nuget\\packages\\": {},
+    "C:\\Users\\nikok\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Uczen\\Documents\\Mikołaj K\\.NET\\WPF\\MVVM\\Units-Converter\\UnitsConverterApp\\UnitsConverterApp\\UnitsConverterApp.csproj",
+      "projectUniqueName": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\PROGRAMOWANIE\\.NET\\WFP\\MVVM\\Units-Converter\\UnitsConverterApp\\UnitsConverterApp\\UnitsConverterApp.csproj",
       "projectName": "UnitsConverterApp",
-      "projectPath": "C:\\Users\\Uczen\\Documents\\Mikołaj K\\.NET\\WPF\\MVVM\\Units-Converter\\UnitsConverterApp\\UnitsConverterApp\\UnitsConverterApp.csproj",
-      "packagesPath": "C:\\Users\\Uczen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Uczen\\Documents\\Mikołaj K\\.NET\\WPF\\MVVM\\Units-Converter\\UnitsConverterApp\\UnitsConverterApp\\obj\\",
+      "projectPath": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\PROGRAMOWANIE\\.NET\\WFP\\MVVM\\Units-Converter\\UnitsConverterApp\\UnitsConverterApp\\UnitsConverterApp.csproj",
+      "packagesPath": "C:\\Users\\nikok\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nikok\\OneDrive\\Dokumenty\\PROGRAMOWANIE\\.NET\\WFP\\MVVM\\Units-Converter\\UnitsConverterApp\\UnitsConverterApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Uczen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nikok\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -68,7 +68,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
       }
     }
   }
