@@ -82,7 +82,7 @@
 
 
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
-                <Separator Width="960"/>
+                <Separator Width="960" Background="#FFC7C7C7"/>
             </StackPanel>
 
             
@@ -116,6 +116,49 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Margin="20" HorizontalAlignment="Stretch">
+                <TextBlock Text="Add your units:"/>
+                <DataGrid/>
+
+                <WrapPanel HorizontalAlignment="Left" Margin="0 10 0 0">
+                    <Button Width="100"
+                            Margin="0 0 10 0"
+                        Height="40"
+                        Background="Transparent"
+                        Content="Update" 
+                        FontSize="12" 
+                        Foreground="#FF838383"
+                            BorderBrush="#FF838383"
+                            BorderThickness="2"
+                            FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Width="100"
+                        Height="40"
+                        Background="Transparent"
+                        Content="Delete" 
+                        FontSize="12" 
+                        Foreground="#FF838383"
+                            BorderBrush="#FF838383"
+                            BorderThickness="2"
+                            FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                </WrapPanel>
+
             </StackPanel>
         </Grid>
     </Grid>

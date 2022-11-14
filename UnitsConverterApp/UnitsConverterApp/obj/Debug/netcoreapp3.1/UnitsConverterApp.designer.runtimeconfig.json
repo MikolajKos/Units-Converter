@@ -6,8 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\nikok\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\nikok\\.nuget\\packages",
+      "C:\\Users\\Uczen\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Uczen\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
     ],
     "configProperties": {

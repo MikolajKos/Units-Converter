@@ -20,3 +20,25 @@ C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\UnitsConverterApp\
 C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.genruntimeconfig.cache
 C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\Design\Themes\MyTheme.baml
 C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\UnitsConverterApp.exe
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\UnitsConverterApp.deps.json
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\UnitsConverterApp.runtimeconfig.json
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\UnitsConverterApp.runtimeconfig.dev.json
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\UnitsConverterApp.dll
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\UnitsConverterApp.pdb
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.csproj.AssemblyReference.cache
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\Design\Themes\MyTheme.baml
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp_MarkupCompile.cache
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp_MarkupCompile.lref
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.g.resources
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.AssemblyInfoInputs.cache
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.AssemblyInfo.cs
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.csproj.CoreCompileInputs.cache
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.dll
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.pdb
+C:\Users\Uczen\Documents\Mikołaj K\.NET\WPF\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.genruntimeconfig.cache
