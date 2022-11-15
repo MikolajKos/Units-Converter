@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace UnitsConverterApp.MVVM.ViewModels
 {
-    public class MainViewModel
+    public class AddUnitsViewModel : ObservableObject
     {
-
+        
     }
 }
