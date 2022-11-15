@@ -115,6 +115,7 @@
                 <TextBlock Text="Value to convert:" Foreground="#2CEEF0"/>
                 <TextBox Style="{StaticResource DefaultTextBox}" 
                          Margin="0 0 0 30"
+                         Padding="5 0 5 0"
                          Background="Transparent"
                          Foreground="#2CEEF0"
                          BorderThickness="2"
@@ -199,7 +200,41 @@
                     </Grid.ColumnDefinitions>
 
                     <Border  Grid.Column="0" Margin="0 0 10 0" Height="270" CornerRadius="10" Background="#FF673AB7">
+                        <StackPanel Margin="20">
+                            <TextBlock Text="Convert From"
+                                       Foreground="#2CEEF0"
+                                       FontSize="22"
+                                       HorizontalAlignment="Center"/>
 
+                            <Separator Margin="30"/>
+
+                            <TextBlock Text="Selected unit:" 
+                                       Foreground="#2CEEF0"
+                                       FontSize="16"
+                                       Margin="0 0 0 10"/>
+                            <WrapPanel Margin="0 0 0 20">
+                                <TextBlock Text="EURO"
+                                               
+                                                Margin="0 0 10 0"
+                                               Foreground="#2CEEF0"/>
+                                <TextBlock Text="(€)"
+                                           Foreground="#2CEEF0"/>
+                            </WrapPanel>
+
+                            <TextBlock Text="Entered value:"
+                                       FontSize="16"
+                                       Foreground="#2CEEF0" 
+                                       Margin="0 0 0 10"/>
+                            <WrapPanel Margin="0 0 0 20">
+                                <TextBlock Text="38.45"
+                                           FontSize="30"
+                                                Margin="0 0 10 0"
+                                               Foreground="#2CEEF0"/>
+                                <TextBlock Text="€"
+                                           FontSize="30"
+                                           Foreground="#2CEEF0"/>
+                            </WrapPanel>
+                        </StackPanel>
                     </Border>
 
                     <Border Grid.Column="1" Margin="10 0 0 0" Height="270" CornerRadius="10">
@@ -210,11 +245,55 @@
                             </RadialGradientBrush>
                         </Border.Background>
 
+                        <StackPanel Margin="20">
+                            <TextBlock Text="Calculated Result"
+                                       FontSize="22"
+                                       HorizontalAlignment="Center"/>
+
+                            <Separator Margin="30"/>
+
+                            <TextBlock Text="Selected unit:" 
+                                       FontSize="16"
+                                       Margin="0 0 0 10"/>
+                            <WrapPanel Margin="0 0 0 20">
+                                <TextBlock Text="PLN"
+                                                Margin="0 0 10 0"/>
+                                <TextBlock Text="(zł)"/>
+                            </WrapPanel>
+
+                            <TextBlock Text="Result:"
+                                       FontSize="16" 
+                                       Margin="0 0 0 10"/>
+                            <WrapPanel Margin="0 0 0 20">
+                                <TextBlock Text="180.32"
+                                           FontSize="30"
+                                                Margin="0 0 10 0"/>
+                                <TextBlock Text="zł"
+                                           FontSize="30"/>
+                            </WrapPanel>
+                        </StackPanel>
+                        
                     </Border>
                 </Grid>
             </StackPanel>
 
-
+            
+            <WrapPanel Grid.Column="1" Grid.Row="2" Margin="20" VerticalAlignment="Center">
+                <TextBlock Text="38.45"
+                           FontSize="40"/>
+                <TextBlock Text="€"
+                           FontSize="40"/>
+                <TextBlock Text="="
+                           Foreground="#FF673AB7"
+                           FontSize="40"
+                           Padding="30 0 30 0"/>
+                <TextBlock Text="180.32"
+                           FontSize="40"/>
+                <TextBlock Text="zł"
+                           FontSize="40"/>
+            </WrapPanel>
+            
+            
             <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                 <Button 
                     Content="➕"
