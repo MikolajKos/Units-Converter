@@ -11,7 +11,7 @@ namespace UnitsConverterApp.Core
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void onPropertyChanged(params string[] nazwyWlasnosci)
+        protected void OnPropertyChanged(params string[] nazwyWlasnosci)
         {
             if (PropertyChanged != null)
             {

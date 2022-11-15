@@ -13,7 +13,7 @@
      Background="{DynamicResource MaterialDesignPaper}"
         Title="MainWindow" Style="{StaticResource CustomFont}"  SizeToContent="WidthAndHeight" ResizeMode="NoResize">
     <Window.DataContext>
-        <vm:MainViewModel/>
+        <vm:AddUnitsViewModel/>
     </Window.DataContext>
 
     <Window.Resources>
@@ -376,7 +376,7 @@
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <TextBlock Text="ENTER UNIT TYPE:"/>
                 <WrapPanel>
-                    <TextBox Style="{StaticResource DefaultTextBox}" Width="280" Margin="0 0 10 0">
+                    <TextBox Text="{Binding UnitTypeInput, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" Width="280" Margin="0 0 10 0">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>
@@ -384,7 +384,8 @@
                         </TextBox.Resources>
                     </TextBox>
 
-                    <Button Content="Add"
+                    <Button Command="{Binding AddUnitType}" 
+                        Content="Add"
                         Foreground="#B4F5F0"
                         Height="50"
                         Width="60"
