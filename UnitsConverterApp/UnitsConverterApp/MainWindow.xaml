@@ -374,7 +374,7 @@
             </Canvas>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="20 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <TextBlock Text="TYPE OF UNIT:"/>
+                <TextBlock Text="ENTER UNIT TYPE:"/>
                 <WrapPanel>
                     <TextBox Style="{StaticResource DefaultTextBox}" Width="280" Margin="0 0 10 0">
                         <TextBox.Resources>
@@ -434,7 +434,7 @@
                 <TextBlock Text="Select unit type:"/>
                 <ComboBox Margin="0 0 0 30"/>
 
-                <TextBlock Text="Base converter unit:"/>
+                <TextBlock Text="Base unit name:"/>
                 <TextBox Style="{StaticResource DefaultTextBox}" Margin="0 0 0 30">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -443,7 +443,7 @@
                     </TextBox.Resources>
                 </TextBox>
 
-                <TextBlock Text="Unit symbol:"/>
+                <TextBlock Text="Base unit symbol:"/>
                 <TextBox Style="{StaticResource DefaultTextBox}" Margin="0 0 0 20">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
