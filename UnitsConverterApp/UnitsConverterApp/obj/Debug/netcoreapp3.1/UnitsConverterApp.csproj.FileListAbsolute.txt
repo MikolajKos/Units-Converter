@@ -67,3 +67,4 @@ C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\Units-Converter\Un
 C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
 C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
 C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\UnitsConverterApp.csproj.CopyComplete
+C:\Users\nikok\OneDrive\Dokumenty\PROGRAMOWANIE\.NET\WFP\MVVM\Units-Converter\UnitsConverterApp\UnitsConverterApp\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
