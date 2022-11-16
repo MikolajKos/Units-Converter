@@ -5,18 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using UnitsConverterApp.Core;
+using UnitsConverterApp.MVVM.Repositories;
 
 namespace UnitsConverterApp.MVVM.ViewModels
 {
     public class AddUnitsViewModel : ObservableObject
     {
+        ContextRepo crep = new ContextRepo();
+
         private string _unitTypeInput;
 
         public string UnitTypeInput
         {
-            get 
+            get
             {
-                return _unitTypeInput; 
+                return _unitTypeInput;
             }
             set
             {
@@ -26,6 +29,88 @@ namespace UnitsConverterApp.MVVM.ViewModels
         }
 
 
+        private string _unitName;
+
+        public string UnitName
+        {
+            get
+            {
+                return _unitName;
+            }
+            set
+            {
+                _unitName = value;
+                OnPropertyChanged(nameof(UnitName));
+            }
+        }
+
+
+        private string _unitSymbol;
+
+        public string UnitSymbol
+        {
+            get
+            {
+                return _unitSymbol;
+            }
+            set
+            {
+                _unitSymbol = value;
+                OnPropertyChanged(nameof(UnitSymbol));
+            }
+        }
+
+
+        private double _unitRatio;
+
+        public double UnitRatio
+        {
+            get
+            {
+                return _unitRatio;
+            }
+            set
+            {
+                _unitRatio = value;
+                OnPropertyChanged(nameof(UnitRatio));
+            }
+        }
+
+
+        private List<string> _unitTypeList;
+
+        public List<string> UnitTypeList
+        {
+            get
+            {
+                return crep.GetUnitTypeList();
+            }
+            set
+            {
+                _unitTypeList = value;
+                OnPropertyChanged(nameof(UnitTypeList));
+            }
+        }
+
+
+        private int _selectedUnitType;
+
+        public int SelectedUnitType
+        {
+            get
+            {
+                return _selectedUnitType;
+            }
+            set
+            {
+                _selectedUnitType = value;
+                OnPropertyChanged(nameof(_selectedUnitType));
+            }
+        }
+
+
+
+
 
         #region Commands
 
@@ -33,12 +118,14 @@ namespace UnitsConverterApp.MVVM.ViewModels
 
         public ICommand AddUnitType
         {
-            get 
+            get
             {
                 if (_addUnitType == null) _addUnitType = new RelayCommand(
                     (object o) =>
                     {
+                        crep.AddUnitType(UnitTypeInput);
 
+                        UnitTypeInput = string.Empty;
                     },
                     (object o) =>
                     {
@@ -47,6 +134,23 @@ namespace UnitsConverterApp.MVVM.ViewModels
                         return true;
                     });
                 return _addUnitType;
+            }
+        }
+
+
+        private ICommand _addUnitCommand;
+
+        public ICommand AddUnitCommand
+        {
+            get
+            {
+                if (_addUnitCommand == null) _addUnitCommand = new RelayCommand(
+                    (object o) =>
+                    {
+                        //crep.AddUnit();
+                    },
+                    (object o) => true);
+                return _addUnitCommand;
             }
         }
 
