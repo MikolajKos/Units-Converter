@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using UnitsConverterApp.Core;
+using UnitsConverterApp.MVVM.Models.DataModels.Entities;
 using UnitsConverterApp.MVVM.Repositories;
 
 namespace UnitsConverterApp.MVVM.ViewModels
@@ -109,6 +111,22 @@ namespace UnitsConverterApp.MVVM.ViewModels
         }
 
 
+        private List<Unit> _dataGridSource;
+
+        public List<Unit> DataGridSource
+        {
+            get
+            {
+                return _dataGridSource;
+            }
+            set
+            {
+                _dataGridSource = value;
+                OnPropertyChanged(nameof(DataGridSource));
+            }
+        }
+
+
 
 
 
@@ -153,6 +171,42 @@ namespace UnitsConverterApp.MVVM.ViewModels
                 return _addUnitCommand;
             }
         }
+
+
+        private ICommand _selectedUnitTypeCommand;
+
+        public ICommand SelectedUnitTypeCommand
+        {
+            get
+            {
+                if (_selectedUnitTypeCommand == null) _selectedUnitTypeCommand = new RelayCommand(
+                    (object o) =>
+                    {
+                        DataGridSource = crep.FillDataGrid(SelectedUnitType);
+                    },
+                    (object o) => true);
+                return _selectedUnitTypeCommand;
+            }
+        }
+
+
+
+        private ICommand _updateCommand;
+
+        public ICommand UpdateCommand
+        {
+            get
+            {
+                if (_updateCommand == null) _updateCommand = new RelayCommand(
+                    (object o) =>
+                    {
+                        crep.UpdateDatGrid();
+                    },
+                    (object o) => true);
+                return _updateCommand;
+            }
+        }
+
 
         #endregion
     }
