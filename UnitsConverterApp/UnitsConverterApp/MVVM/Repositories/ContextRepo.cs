@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using UnitsConverterApp.MVVM.Models.DataModels;
 using UnitsConverterApp.MVVM.Models.DataModels.Entities;
+using UnitsConverterApp.MVVM.ViewModels;
 
 namespace UnitsConverterApp.MVVM.Repositories
 {
     public class ContextRepo
     {
-        MyDbContext myContext = new MyDbContext();
-        List<string> getUnitTypeList = new List<string>();
+        private MyDbContext myContext = new MyDbContext();
+        private List<string> getUnitTypeList = new List<string>();
 
         public void AddUnitType(string unitType)
         {

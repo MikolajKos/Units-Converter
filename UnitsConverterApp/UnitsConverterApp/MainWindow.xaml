@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UnitsConverterApp" xmlns:vm="clr-namespace:UnitsConverterApp.MVVM.ViewModels"
+        xmlns:converters="clr-namespace:UnitsConverterApp.Converters"
         mc:Ignorable="d"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
@@ -17,6 +18,8 @@
     </Window.DataContext>
 
     <Window.Resources>
+        <converters:UnitTypeNameToInt x:Key="UnitTypeNameToInt"/>
+
         <Storyboard x:Key="AddConverterRollDown">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="AddUnitGrid" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
                 <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="134.04"/>
@@ -384,7 +387,7 @@
                         </TextBox.Resources>
                     </TextBox>
 
-                    <Button Command="{Binding AddUnitType}" 
+                    <Button Command="{Binding AddUnitTypeCommand}" 
                         Content="Add"
                         Foreground="#B4F5F0"
                         Height="50"
@@ -433,7 +436,7 @@
 
             <StackPanel Grid.Row="2" Grid.Column="0" Margin="20" HorizontalAlignment="Left">
                 <TextBlock Text="Select unit type:"/>
-                <ComboBox ItemsSource="{Binding UnitTypeList}" SelectedItem="{Binding SelectedUnitType}" MaxWidth="350" Margin="0 0 0 20"/>
+                <ComboBox ItemsSource="{Binding UnitTypeList}" SelectedItem="{Binding SelectedUnitType, Converter={StaticResource UnitTypeNameToInt}, UpdateSourceTrigger=PropertyChanged}" MaxWidth="350" Margin="0 0 0 20"/>
 
                 <TextBlock Text="Unit name:"/>
                 <TextBox Text="{Binding UnitName}" Style="{StaticResource DefaultTextBox}" Margin="0 0 0 20">
@@ -465,7 +468,7 @@
                     <StackPanel Grid.Column="2" HorizontalAlignment="Left" Margin="10 0 0 0">
 
                         <TextBlock Text="*Ratio to base unit:"/>
-                        <TextBox Text="{Binding UnitRatio}" Style="{StaticResource DefaultTextBox}" Width="165" Margin="0 0 0 20">
+                        <TextBox Text="{Binding UnitRatio, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" Width="165" Margin="0 0 0 20">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="3"/>
@@ -488,8 +491,8 @@
                     </Button.Resources>
                 </Button>
 
-                <TextBlock Text="*Set the scale to 1 for base unit"
-                           Margin="0 10 0 0"
+                <TextBlock Text="*Set ratio to 1 for base unit (Example: 1g = 0.001kg)"
+                           Margin="0 8 0 0"
                            FontSize="13" Foreground="#FF444444"/>
             </StackPanel>
 

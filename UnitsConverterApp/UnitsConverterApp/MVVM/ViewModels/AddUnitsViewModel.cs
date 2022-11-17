@@ -61,9 +61,9 @@ namespace UnitsConverterApp.MVVM.ViewModels
         }
 
 
-        private double _unitRatio;
+        private string _unitRatio;
 
-        public double UnitRatio
+        public string UnitRatio
         {
             get
             {
@@ -104,7 +104,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             set
             {
                 _selectedUnitType = value;
-                OnPropertyChanged(nameof(_selectedUnitType));
+                OnPropertyChanged(nameof(SelectedUnitType));
             }
         }
 
@@ -116,7 +116,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
 
         private ICommand _addUnitType;
 
-        public ICommand AddUnitType
+        public ICommand AddUnitTypeCommand
         {
             get
             {
@@ -147,7 +147,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
                 if (_addUnitCommand == null) _addUnitCommand = new RelayCommand(
                     (object o) =>
                     {
-                        //crep.AddUnit();
+                        crep.AddUnit(UnitName, UnitSymbol, double.Parse(UnitRatio), SelectedUnitType);
                     },
                     (object o) => true);
                 return _addUnitCommand;
