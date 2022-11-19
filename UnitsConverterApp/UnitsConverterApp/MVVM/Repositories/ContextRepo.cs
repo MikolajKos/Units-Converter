@@ -92,7 +92,6 @@ namespace UnitsConverterApp.MVVM.Repositories
         public string CalculateValue(string enteredValue, string fromUnit, string toUnit)
         {
             double result = (double.Parse(enteredValue) * GetRatio(toUnit)) / GetRatio(fromUnit);
-
             return result.ToString();
         }
 
