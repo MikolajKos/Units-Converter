@@ -95,12 +95,17 @@
                            Margin="0 0 0 50"/>
 
                 <TextBlock Text="SELECT UNIT TYPE:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
-                <ComboBox  ItemsSource="{Binding UnitTypeList}"
+
+                
+                    <ComboBox  ItemsSource="{Binding UnitTypeList}"
+                               SelectedItem="{Binding SelectedUnitType, Converter={StaticResource UnitTypeNameToInt}, UpdateSourceTrigger=PropertyChanged}"
                            HorizontalAlignment="Left"
                            Foreground="#2CEEF0"
                            BorderBrush="#2CEEF0"
                            Height="40"
                            Width="350"/>
+
+                
                 <Separator HorizontalAlignment="Left" Margin="0 30 0 30" Width="350" Background="#FF4945B2"/>
 
                 <TextBlock Text="Convert From:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
@@ -333,7 +338,9 @@
         </Grid>
 
 
-        <Grid x:Name="AddUnitGrid" Visibility="Visible" Background="White">
+        <Grid x:Name="AddUnitGrid"
+              Visibility="Hidden"
+              Background="White">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -513,10 +520,13 @@
 
 
             <StackPanel Grid.Row="2" Grid.Column="1" Margin="20" HorizontalAlignment="Stretch">
-                <TextBlock Text="Add your units:"/>
-                <DataGrid ItemsSource="{Binding DataGridSource}">
-
-                </DataGrid>
+                
+                <WrapPanel>
+                    <TextBlock Text="Add your units:" Margin="0 0 10 0"/>
+                    <TextBlock Text="{Binding SelectedUnitType}" Foreground="#FF4C72CD" FontWeight="Bold"/>
+                </WrapPanel>
+                <DataGrid ItemsSource="{Binding DataGridSource}"
+                          MaxHeight="235"/>
 
                 <WrapPanel HorizontalAlignment="Left" Margin="0 10 0 0">
                     <Button Command="{Binding UpdateCommand}" 

@@ -92,7 +92,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
         private List<string> _unitList;
         public List<string> UnitList
         {
-            get => crep.GetUnitList();
+            get => crep.GetUnitList(SelectedUnitType);
             set
             {
                 _unitList = value;
@@ -112,7 +112,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             set
             {
                 _selectedUnitType = value;
-                OnPropertyChanged(nameof(SelectedUnitType));
+                OnPropertyChanged(nameof(SelectedUnitType), nameof(UnitList));
             }
         }
 
@@ -174,7 +174,12 @@ namespace UnitsConverterApp.MVVM.ViewModels
                     {
                         crep.AddUnit(UnitName, UnitSymbol, double.Parse(UnitRatio), SelectedUnitType);
 
-                        UnitList = crep.GetUnitList();
+                        UnitName = string.Empty;
+                        UnitSymbol = string.Empty;
+                        UnitRatio = string.Empty;
+
+                        UnitList = crep.GetUnitList(SelectedUnitType);
+                        DataGridSource = crep.FillDataGrid(SelectedUnitType);
                     },
                     (object o) => true);
                 return _addUnitCommand;

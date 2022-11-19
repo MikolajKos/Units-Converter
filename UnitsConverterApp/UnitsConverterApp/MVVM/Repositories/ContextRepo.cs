@@ -13,10 +13,6 @@ namespace UnitsConverterApp.MVVM.Repositories
 {
     public class ContextRepo
     {
-/*        private MyDbContext myContext = new MyDbContext();
-        private List<string> getUnitTypeList;
-        private List<string> getUnitList = new List<string>();
-        private List<Unit> tableDataList { get; set; }*/
         private ContextRepoModel model = new ContextRepoModel();
         private MyDbContext myContext = new MyDbContext();
 
@@ -55,23 +51,21 @@ namespace UnitsConverterApp.MVVM.Repositories
         {
             model.getUnitTypeList = new List<string>();
 
-            var myQuery = myContext.UnitsType.Select(s => s.UnitTypeName);
+            var getNamesQuery = myContext.UnitsType.Select(s => s.UnitTypeName);
 
-            foreach (var elements in myQuery)
-            {
+            foreach (var elements in getNamesQuery)
                 model.getUnitTypeList.Add(elements.ToString());
-            }
 
             return model.getUnitTypeList;
         }
 
-        public List<string> GetUnitList()
+        public List<string> GetUnitList(int typeId = 1)
         {
             model.getUnitList = new List<string>();
-            var count = myContext.Units.Where(o => o.Id > 0).Count();
+            var getNamesQuery = myContext.Units.Where(k => k.UnitTypeId == typeId)?.Select(s => s.Name);
 
-            for (int i = 1; i <= count; i++)
-                model.getUnitList.Add(myContext.Units.FirstOrDefault(k => k.Id == i)?.Name.ToString());
+            foreach (var elemens in getNamesQuery)
+                model.getUnitList.Add(elemens.ToString());
 
             return model.getUnitList;
         }
@@ -98,3 +92,5 @@ namespace UnitsConverterApp.MVVM.Repositories
         }
     }
 }
+
+
