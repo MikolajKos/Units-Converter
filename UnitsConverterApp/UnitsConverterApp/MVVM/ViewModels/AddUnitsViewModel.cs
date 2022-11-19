@@ -140,7 +140,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             get => _convertFromUnit;
             set
             {
-                _convertFromUnit = value + $" ({crep.GetUnitSymbol(value)})";
+                _convertFromUnit = value /*+ $" ({crep.GetUnitSymbol(value)})"*/;
                 OnPropertyChanged(nameof(ConvertFromUnit));
             }
         }
@@ -153,7 +153,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             get => _convertToUnit;
             set
             {
-                _convertToUnit = value + $" ({crep.GetUnitSymbol(value)})";
+                _convertToUnit = value /*+ $" ({crep.GetUnitSymbol(value)})"*/;
                 OnPropertyChanged(nameof(ConvertToUnit));
             }
         }
@@ -167,10 +167,23 @@ namespace UnitsConverterApp.MVVM.ViewModels
             set
             {
                 _valueToConvert = value;
+                CalculatedResult = null;
                 OnPropertyChanged(nameof(ValueToConvert));
             }
         }
 
+
+        private string _calculatedResult;
+
+        public string CalculatedResult
+        {
+            get { return _calculatedResult; }
+            set
+            {
+                _calculatedResult = crep.CalculateValue(ValueToConvert, ConvertFromUnit, ConvertToUnit);
+                OnPropertyChanged(nameof(CalculatedResult));
+            }
+        }
 
 
 

@@ -270,11 +270,9 @@
                                        FontSize="16" 
                                        Margin="0 0 0 10"/>
                             <WrapPanel Margin="0 0 0 20">
-                                <TextBlock Text="180.32"
+                                <TextBlock Text="{Binding CalculatedResult}"
                                            FontSize="30"
-                                                Margin="0 0 10 0"/>
-                                <TextBlock Text="zł"
-                                           FontSize="30"/>
+                                           Margin="0 0 10 0"/>
                             </WrapPanel>
                         </StackPanel>
                         
@@ -330,7 +328,7 @@
 
 
         <Grid x:Name="AddUnitGrid"
-              Visibility="Hidden"
+              Visibility="Visible"
               Background="White">
             <Grid.RenderTransform>
                 <TransformGroup>

@@ -75,8 +75,26 @@ namespace UnitsConverterApp.MVVM.Repositories
             var getSymbolQuery = myContext.Units.FirstOrDefault(k => k.Name == unitName)?.Symbol;
             return getSymbolQuery;
         }
+        
+        private double GetRatio(string unitName)
+        {
+            var getRatioQuery = myContext.Units
+                .FirstOrDefault(k => k.Name == unitName)?.Ratio.ToString();
+
+            return double.Parse(getRatioQuery);
+        }
+
         #endregion
 
+
+
+
+        public string CalculateValue(string enteredValue, string fromUnit, string toUnit)
+        {
+            double result = (double.Parse(enteredValue) * GetRatio(toUnit)) / GetRatio(fromUnit);
+
+            return result.ToString();
+        }
 
         public List<Unit> FillDataGrid(int typeId = 1)
         {
