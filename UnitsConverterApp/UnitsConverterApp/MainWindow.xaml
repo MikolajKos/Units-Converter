@@ -92,27 +92,33 @@
                 <TextBlock Text="Select units to convert" 
                            Foreground="#FF17A9AA"
                            FontSize="16"
-                           Margin="0 0 0 70"/>
+                           Margin="0 0 0 50"/>
 
-                <TextBlock Text="SELECT UNIT TYPE:" Foreground="#2CEEF0"/>
-                <ComboBox  HorizontalAlignment="Left"
+                <TextBlock Text="SELECT UNIT TYPE:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
+                <ComboBox  ItemsSource="{Binding UnitTypeList}"
+                           HorizontalAlignment="Left"
+                           Foreground="#2CEEF0"
                            BorderBrush="#2CEEF0"
                            Height="40"
                            Width="350"/>
                 <Separator HorizontalAlignment="Left" Margin="0 30 0 30" Width="350" Background="#FF4945B2"/>
 
-                <TextBlock Text="Convert From:" Foreground="#2CEEF0"/>
-                <ComboBox  HorizontalAlignment="Left"
+                <TextBlock Text="Convert From:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
+                <ComboBox  ItemsSource="{Binding UnitList}"
+                           HorizontalAlignment="Left"
                            BorderBrush="#2CEEF0"
+                           Foreground="#2CEEF0"
                            Height="40"
                            Width="350"
                            Margin="0 0 0 30"/>
 
-                <TextBlock Text="Convert To:" Foreground="#2CEEF0"/>
-                <ComboBox HorizontalAlignment="Left"
+                <TextBlock Text="Convert To:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
+                <ComboBox ItemsSource="{Binding UnitList}"
+                          HorizontalAlignment="Left"
                           Height="40"
                           Width="350"
                           BorderBrush="#2CEEF0"
+                          Foreground="#2CEEF0"
                           Margin="0 0 0 50"/>
 
                 <TextBlock Text="Value to convert:" Foreground="#2CEEF0"/>
@@ -416,13 +422,8 @@
                         BorderThickness="4 0 0 0"
                         BorderBrush="#041F60">
 
-                    <ListView Foreground="#DD4B3C3C">
-                        <ListViewItem Content="Currency" Padding="10 3 10 3"/>
-                        <ListViewItem Content="Mass" Padding="10 3 10 3"/>
-                        <ListViewItem Content="Size" Padding="10 3 10 3"/>
-                        <ListViewItem Content="Item1" Padding="10 3 10 3"/>
-                        <ListViewItem Content="Item1" Padding="10 3 10 3"/>
-                        <ListViewItem Content="Item1" Padding="10 3 10 3"/>
+                    <ListView ItemsSource="{Binding UnitTypeList}" Foreground="#DD4B3C3C">
+
                     </ListView>
 
                 </Border>
@@ -445,7 +446,7 @@
                               Margin="0 0 20 20"/>
 
                     <Button Command="{Binding SelectedUnitTypeCommand}"
-                            Content="Select" 
+                            Content="Select"
                             Background="#041F60" 
                             Width="80" 
                             Margin="0 0 0 20" 

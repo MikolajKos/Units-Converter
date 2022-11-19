@@ -78,20 +78,26 @@ namespace UnitsConverterApp.MVVM.ViewModels
             }
         }
 
-
         private List<string> _unitTypeList;
-
         public List<string> UnitTypeList
         {
-            get
-            {
-                return crep.GetUnitTypeList();
-            }
+            get => crep.GetUnitTypeList();
             set
             {
-                _unitTypeList = value;
+                _unitTypeList = crep.GetUnitTypeList();
                 OnPropertyChanged(nameof(UnitTypeList));
             }
+        }
+
+        private List<string> _unitList;
+        public List<string> UnitList
+        {
+            get => crep.GetUnitList();
+            set
+            {
+                _unitList = value;
+                OnPropertyChanged(nameof(UnitList));
+            } 
         }
 
 
@@ -142,8 +148,9 @@ namespace UnitsConverterApp.MVVM.ViewModels
                     (object o) =>
                     {
                         crep.AddUnitType(UnitTypeInput);
-
                         UnitTypeInput = string.Empty;
+
+                        UnitTypeList = crep.GetUnitTypeList();
                     },
                     (object o) =>
                     {
@@ -166,6 +173,8 @@ namespace UnitsConverterApp.MVVM.ViewModels
                     (object o) =>
                     {
                         crep.AddUnit(UnitName, UnitSymbol, double.Parse(UnitRatio), SelectedUnitType);
+
+                        UnitList = crep.GetUnitList();
                     },
                     (object o) => true);
                 return _addUnitCommand;
@@ -181,7 +190,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             {
                 if (_selectedUnitTypeCommand == null) _selectedUnitTypeCommand = new RelayCommand(
                     (object o) =>
-                    {
+                    { 
                         DataGridSource = crep.FillDataGrid(SelectedUnitType);
                     },
                     (object o) => true);
