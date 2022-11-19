@@ -97,7 +97,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             {
                 _unitList = value;
                 OnPropertyChanged(nameof(UnitList));
-            } 
+            }
         }
 
 
@@ -131,6 +131,46 @@ namespace UnitsConverterApp.MVVM.ViewModels
                 OnPropertyChanged(nameof(DataGridSource));
             }
         }
+
+
+        private string _convertFromUnit;
+
+        public string ConvertFromUnit
+        {
+            get => _convertFromUnit;
+            set
+            {
+                _convertFromUnit = value + $" ({crep.GetUnitSymbol(value)})";
+                OnPropertyChanged(nameof(ConvertFromUnit));
+            }
+        }
+
+
+        private string _convertToUnit;
+
+        public string ConvertToUnit
+        {
+            get => _convertToUnit;
+            set
+            {
+                _convertToUnit = value + $" ({crep.GetUnitSymbol(value)})";
+                OnPropertyChanged(nameof(ConvertToUnit));
+            }
+        }
+
+
+        private string _valueToConvert;
+
+        public string ValueToConvert
+        {
+            get => _valueToConvert;
+            set
+            {
+                _valueToConvert = value;
+                OnPropertyChanged(ValueToConvert);
+            }
+        }
+
 
 
 
@@ -195,7 +235,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
             {
                 if (_selectedUnitTypeCommand == null) _selectedUnitTypeCommand = new RelayCommand(
                     (object o) =>
-                    { 
+                    {
                         DataGridSource = crep.FillDataGrid(SelectedUnitType);
                     },
                     (object o) => true);

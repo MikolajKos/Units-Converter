@@ -110,6 +110,7 @@
 
                 <TextBlock Text="Convert From:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
                 <ComboBox  ItemsSource="{Binding UnitList}"
+                           SelectedItem="{Binding ConvertFromUnit}"
                            HorizontalAlignment="Left"
                            BorderBrush="#2CEEF0"
                            Foreground="#2CEEF0"
@@ -119,6 +120,7 @@
 
                 <TextBlock Text="Convert To:" Foreground="#2CEEF0" Margin="0 0 0 10"/>
                 <ComboBox ItemsSource="{Binding UnitList}"
+                          SelectedItem="{Binding ConvertToUnit}"
                           HorizontalAlignment="Left"
                           Height="40"
                           Width="350"
@@ -128,6 +130,7 @@
 
                 <TextBlock Text="Value to convert:" Foreground="#2CEEF0"/>
                 <TextBox Style="{StaticResource DefaultTextBox}" 
+                         Text="{Binding ValueToConvert, UpdateSourceTrigger=PropertyChanged}"
                          Margin="0 0 0 30"
                          Padding="5 0 5 0"
                          Background="Transparent"
@@ -179,12 +182,9 @@
                                            FontSize="16"/>
 
                                 <WrapPanel>
-                                    <TextBlock Text="EURO"
-                                               
+                                    <TextBlock Text="{Binding ConvertFromUnit}"
                                                 Margin="0 0 10 0"
                                                Foreground="#2CEEF0"/>
-                                    <TextBlock Text="(€)"
-                                           Foreground="#2CEEF0"/>
                                 </WrapPanel>
                             </StackPanel>
 
@@ -195,11 +195,9 @@
                                            FontSize="16"/>
 
                                 <WrapPanel>
-                                    <TextBlock Text="PLN"
+                                    <TextBlock Text="{Binding ConvertToUnit}"
                                                 Margin="0 0 10 0"
                                                Foreground="#2CEEF0"/>
-                                    <TextBlock Text="(zł)"
-                                           Foreground="#2CEEF0"/>
                                 </WrapPanel>
                             </StackPanel>
                         </Grid>
@@ -227,12 +225,9 @@
                                        FontSize="16"
                                        Margin="0 0 0 10"/>
                             <WrapPanel Margin="0 0 0 20">
-                                <TextBlock Text="EURO"
-                                               
+                                <TextBlock Text="{Binding ConvertFromUnit}"
                                                 Margin="0 0 10 0"
                                                Foreground="#2CEEF0"/>
-                                <TextBlock Text="(€)"
-                                           Foreground="#2CEEF0"/>
                             </WrapPanel>
 
                             <TextBlock Text="Entered value:"
@@ -240,13 +235,10 @@
                                        Foreground="#2CEEF0" 
                                        Margin="0 0 0 10"/>
                             <WrapPanel Margin="0 0 0 20">
-                                <TextBlock Text="38.45"
+                                <TextBlock Text="{Binding ValueToConvert, UpdateSourceTrigger=PropertyChanged}"
                                            FontSize="30"
                                                 Margin="0 0 10 0"
                                                Foreground="#2CEEF0"/>
-                                <TextBlock Text="€"
-                                           FontSize="30"
-                                           Foreground="#2CEEF0"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -270,9 +262,8 @@
                                        FontSize="16"
                                        Margin="0 0 0 10"/>
                             <WrapPanel Margin="0 0 0 20">
-                                <TextBlock Text="PLN"
+                                <TextBlock Text="{Binding ConvertToUnit}"
                                                 Margin="0 0 10 0"/>
-                                <TextBlock Text="(zł)"/>
                             </WrapPanel>
 
                             <TextBlock Text="Result:"

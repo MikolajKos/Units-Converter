@@ -69,6 +69,12 @@ namespace UnitsConverterApp.MVVM.Repositories
 
             return model.getUnitList;
         }
+
+        public string GetUnitSymbol(string unitName)
+        {
+            var getSymbolQuery = myContext.Units.FirstOrDefault(k => k.Name == unitName)?.Symbol;
+            return getSymbolQuery;
+        }
         #endregion
 
 
