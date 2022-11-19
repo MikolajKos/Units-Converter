@@ -163,13 +163,14 @@ namespace UnitsConverterApp.MVVM.ViewModels
 
         public string ValueToConvert
         {
-            get => _valueToConvert;
+            get { return _valueToConvert; }
             set
             {
                 _valueToConvert = value;
-                OnPropertyChanged(ValueToConvert);
+                OnPropertyChanged(nameof(ValueToConvert));
             }
         }
+
 
 
 
