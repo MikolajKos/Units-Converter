@@ -8,6 +8,8 @@ using System.Windows.Input;
 using UnitsConverterApp.Core;
 using UnitsConverterApp.MVVM.Models.DataModels.Entities;
 using UnitsConverterApp.MVVM.Repositories;
+using UnitsConverterApp.Validation;
+using UnitsConverterApp.Validation.TypesOfValidation;
 
 namespace UnitsConverterApp.MVVM.ViewModels
 {
@@ -186,6 +188,17 @@ namespace UnitsConverterApp.MVVM.ViewModels
         }
 
 
+        private string _errorMessages;
+
+        public string ErrorMessages
+        {
+            get => _errorMessages;
+            set
+            {
+                _errorMessages = value;
+                OnPropertyChanged(nameof(ErrorMessages));
+            }
+        }
 
 
 
@@ -204,6 +217,7 @@ namespace UnitsConverterApp.MVVM.ViewModels
                         crep.AddUnitType(UnitTypeInput);
                         UnitTypeInput = string.Empty;
 
+                        //Updates unit type 
                         UnitTypeList = crep.GetUnitTypeList();
                     },
                     (object o) =>
@@ -226,16 +240,48 @@ namespace UnitsConverterApp.MVVM.ViewModels
                 if (_addUnitCommand == null) _addUnitCommand = new RelayCommand(
                     (object o) =>
                     {
+                        Validate validate = new Validate();
+                        validate.AddValidator(new Validator<string>(UnitName, "Unit name",
+                            new List<ISpecyficValidation<string>>()
+                            {
+                                new ValidateStringEmpty()
+                            }));
+                        validate.AddValidator(new Validator<string>(UnitSymbol, "Unit symbol",
+                            new List<ISpecyficValidation<string>>()
+                            {
+                                new ValidateStringEmpty()
+                            }));                        
+                        validate.AddValidator(new Validator<string>(UnitRatio, "Unit ratio",
+                            new List<ISpecyficValidation<string>>()
+                            {
+                                new ValidateStringEmpty()
+                            }));
+
+
+                        if (!validate.Validation(out string message))
+                        {
+                            ErrorMessages = message;
+                            return;
+                        }
+
                         crep.AddUnit(UnitName, UnitSymbol, double.Parse(UnitRatio), SelectedUnitType);
 
+                        //Clears Form
                         UnitName = string.Empty;
                         UnitSymbol = string.Empty;
                         UnitRatio = string.Empty;
 
+                        //Updates DataGrid
                         UnitList = crep.GetUnitList(SelectedUnitType);
                         DataGridSource = crep.FillDataGrid(SelectedUnitType);
+
+                        ErrorMessages = string.Empty;
                     },
-                    (object o) => true);
+                    (object o) =>
+                    {
+                        if (SelectedUnitType == 0) return false;
+                        return true;
+                    });
                 return _addUnitCommand;
             }
         }

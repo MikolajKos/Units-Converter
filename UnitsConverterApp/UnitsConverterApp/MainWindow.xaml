@@ -407,21 +407,26 @@
             </StackPanel>
 
 
-            <StackPanel Grid.Column="1" Grid.Row="1" Margin="20">
+            <StackPanel Grid.Column="1" Grid.Row="1" Margin="20" VerticalAlignment="Bottom">
 
-                <TextBlock Text="Unit types:"/>
-                <Border Height="68"
-                        Width="230"
-                        HorizontalAlignment="Left"
-                        Background="#7FB4F5F0"
+                <TextBlock Text="Errors were found:" Margin="0 0 0 10" VerticalAlignment="Center"/>
+                <Border Height="40" 
                         CornerRadius="3"
-                        BorderThickness="4 0 0 0"
-                        BorderBrush="#041F60">
+                        Background="#EA1E1E">
 
-                    <ListView ItemsSource="{Binding UnitTypeList}" Foreground="#DD4B3C3C">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
 
-                    </ListView>
-
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="!" Foreground="#D4D4D4" FontSize="20" FontWeight="Bold"/>
+                        </StackPanel>
+                        <Grid Grid.Column="1" Background="#FF6E6E" Height="40" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding ErrorMessages}" Foreground="#AFFFFFFF" FontSize="14" VerticalAlignment="Center" Padding="10 0 0 0"/>
+                        </Grid>
+                    </Grid>
                 </Border>
             </StackPanel>
 
